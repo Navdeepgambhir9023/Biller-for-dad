@@ -20,7 +20,7 @@
   <label for="buyerState">Buyer State Name and Code:</label>
   <input type="text" id="buyerState"><br><br>
 
-  <label for="buyerRef">Other References|  Prem Or Kailash</label>
+  <label for="buyerRef">Other References| Prem Or Kailash</label>
   <input type="text" id="buyerRef"><br><br>
 
   <!-- Added input for PackingSales percentage -->
@@ -52,12 +52,12 @@
   <button onclick="saveInputs()">Save Inputs</button>
 
   <script>
-    const items = [];
+    // Initialize items array from localStorage or empty array if not present
+    const items = JSON.parse(localStorage.getItem('items')) || [];
 
     function addItem() {
       // Get input values for item details
       const sl = document.getElementById('sl').value;
-      const kind = document.getElementById('kind').value;
       const description = document.getElementById('description').value;
       const quantity = document.getElementById('quantity').value;
       const rate = document.getElementById('rate').value;
@@ -67,7 +67,6 @@
       // Add item to the items array
       items.push({
         sl,
-        kind,
         description,
         quantity,
         rate,
@@ -77,14 +76,16 @@
 
       // Clear the input fields
       document.getElementById('sl').value = '';
-      document.getElementById('kind').value = '';
       document.getElementById('description').value = '';
       document.getElementById('quantity').value = '';
       document.getElementById('rate').value = '';
       document.getElementById('per').value = '';
       document.getElementById('disc').value = '';
-      document.getElementById('amount').value = '';
+
+      // Save updated items array to localStorage
+      localStorage.setItem('items', JSON.stringify(items));
     }
+
 
     function saveInputs() {
       // Get input values for buyer details
