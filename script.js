@@ -116,6 +116,9 @@ function convertAmountToWords(amount) {
       str += numberWords[Math.floor(n / 100)] + ' Hundred ';
       n %= 100;
     }
+    if (n > 0) {
+      str += convertTwoDigit(n);
+    }
     return str;
   }
 
@@ -134,6 +137,13 @@ function convertAmountToWords(amount) {
   if (hundreds > 0) {
     words += convertThreeDigit(hundreds);
   }
-  words += ' and ' + convertTwoDigit(paise) + ' Paise Only';
+  words = words.trim();
+
+  if (paise > 0) {
+    words += ' and ' + convertTwoDigit(paise) + ' Paise Only';
+  } else {
+    words += ' Only';
+  }
+
   return words.trim();
 }
