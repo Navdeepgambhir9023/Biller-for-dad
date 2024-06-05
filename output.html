@@ -40,7 +40,7 @@
             <tr>
               <td>Quotation No.<p>5</p>
               </td>
-              <td>Dated<p>29-May-24</p>
+              <td>Dated<p id="date">29-May-24</p>
               </td>
             </tr>
             <tr>
@@ -166,6 +166,19 @@
 
   </div>
   <button onclick="window.print()">Print Document</button>
+  <script>
+    const date = new Date();
+    const day = date.getDate();
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const monthIndex = date.getMonth();
+    const month = monthNames[monthIndex];
+    const year = date.getFullYear().toString().slice(-2);
+
+    const formattedDate = `${day}-${month}-${year}`;
+
+    const dateP = document.getElementById("date");
+    dateP.innerText = formattedDate;
+  </script>
 
   <script src="./script.js"></script>
 
