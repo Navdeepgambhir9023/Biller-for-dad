@@ -27,9 +27,6 @@
 
   <hr>
 
-  <label for="sl">Sl No:</label>
-  <input type="text" id="sl"><br><br>
-
   <label for="description">Description of Goods and Services:</label>
   <input type="text" id="description"><br><br>
 
@@ -54,10 +51,10 @@
   <script>
     // Initialize items array from localStorage or empty array if not present
     const items = JSON.parse(localStorage.getItem('items')) || [];
+    let sl = 1; // Initialize serial number
 
     function addItem() {
       // Get input values for item details
-      const sl = document.getElementById('sl').value;
       const description = document.getElementById('description').value;
       const quantity = document.getElementById('quantity').value;
       const rate = document.getElementById('rate').value;
@@ -66,7 +63,7 @@
 
       // Add item to the items array
       items.push({
-        sl,
+        sl: sl++, // Increment and use serial number
         description,
         quantity,
         rate,
@@ -75,7 +72,6 @@
       });
 
       // Clear the input fields
-      document.getElementById('sl').value = '';
       document.getElementById('description').value = '';
       document.getElementById('quantity').value = '';
       document.getElementById('rate').value = '';
@@ -85,7 +81,6 @@
       // Save updated items array to localStorage
       localStorage.setItem('items', JSON.stringify(items));
     }
-
 
     function saveInputs() {
       // Get input values for buyer details

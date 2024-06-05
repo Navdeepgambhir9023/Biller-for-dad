@@ -12,6 +12,19 @@ function updateOutputPage() {
   const packingSalesPercent = parseFloat(queryParams.get('packingSalesPercent') || '0'); // Parse as float
   const items = JSON.parse(queryParams.get('items') || '[]');
 
+
+  const date = new Date();
+  const day = date.getDate();
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const monthIndex = date.getMonth();
+  const month = monthNames[monthIndex];
+  const year = date.getFullYear().toString().slice(-2);
+
+  const formattedDate = `${day}-${month}-${year}`;
+
+  const dateP = document.getElementById("date");
+  dateP.innerText = formattedDate;
+
   // Update buyer details
   document.getElementById('buyerNamePlaceholder').innerText = buyerName;
   document.getElementById('buyerAddressPlaceholder').innerText = buyerAddress;
@@ -43,8 +56,10 @@ function updateOutputPage() {
   });
 
   const height = document.getElementById("tfoot-packingAndSale-height");
-
-  if (items.length > 0 && items.length <= 5) {
+  if (items.length > 0 && items.length <= 1) {
+    height.style.height = 40 / items.length + "vh"
+  }
+  else if (items.length > 0 && items.length <= 5) {
     height.style.height = 80 / items.length + "vh"
   }
   else if (items.length > 6 && items.length <= 10) {
@@ -101,10 +116,6 @@ function convertAmountToWords(amount) {
       str += numberWords[Math.floor(n / 100)] + ' Hundred ';
       n %= 100;
     }
-    if (n > 0) {
-      if (str !== '') str += 'and ';
-      str += convertTwoDigit(n);
-    }
     return str;
   }
 
@@ -126,4 +137,3 @@ function convertAmountToWords(amount) {
   words += ' and ' + convertTwoDigit(paise) + ' Paise Only';
   return words.trim();
 }
-
