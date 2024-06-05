@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="a4-document">
+    <div id="title-div">
+      <h2>Quotation</h2>
+      <p>Proforma Invoice</p>
+    </div>
+    <div class="border">
+      <header>
+        <div class="header-left">
+          <div class="company-info">
+            <p><strong>G R AGRO INDUSTRIES 1</strong></p>
+            <p>GSTIN/UIN: 23AAGFG3497F1ZF</p>
+            <p>State Name: Madhya Pradesh, Code: 23</p>
+          </div>
+
+          <section class="buyer-info">
+            <p><strong>Buyer (Bill to)</strong></p>
+            <!-- Placeholder for buyer name -->
+            <p id="buyerNamePlaceholder">Buyer Name</p>
+            <!-- Placeholder for buyer address -->
+            <p id="buyerAddressPlaceholder">Buyer Address</p>
+            <!-- Placeholder for buyer GSTIN/UIN -->
+            <p id="buyerGSTINPlaceholder">Buyer GSTIN/UIN</p>
+            <!-- Placeholder for buyer state name and code -->
+            <p id="buyerStatePlaceholder">Buyer State Name and Code</p>
+          </section>
+        </div>
+        <div class="header-right">
+          <table>
+            <tr>
+              <td>Quotation No.<p>5</p>
+              </td>
+              <td>Dated<p>29-May-24</p>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Mode/Terms of Payment<p>1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Buyer's Ref/Order No.</td>
+
+              <td>Other References
+                <p id="buyerRefPlaceholder">Buyer's Ref/Order No.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Dispatched through<p>.</p>
+              </td>
+              <td>Destination<p>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>City/Port of Loading<p>.</p>
+              </td>
+              <td>City/Port of Discharge</td>
+            </tr>
+          </table>
+          <div id="head-tfoot">
+            Terms Of Delivery
+            <p class="term-delivery"><b>T[P</b></p>
+          </div>
+        </div>
+      </header>
+
+      <section class="item-details">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:3%">Sl No.</th>
+              <th style="width:15%">No. & Kind of Pkgs.</th>
+              <th style="width:32%">Description of Goods and Services</th>
+              <th style="width:10%">Quantity</th>
+              <th style="width:10%">Rate</th>
+              <th style="width:3%">per</th>
+              <th style="width:6%">Disc. %</th>
+              <th style="width:15%">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="item-rows">
+            <!-- Dynamic Rows Will Be Inserted Here -->
+          </tbody>
+          <tfoot>
+            <tr id="tfoot-packingAndSale-height">
+              <td></td>
+              <td></td>
+              <td id="packingandsales" style="text-align:right;"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td id="sub-total-amount" style="text-align:right;">0.00</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td colspan="" style="text-align:right;">Total</td>
+              <td id="quantity-total" style="text-align:right;">0</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td id="total-amount" style="text-align:right;">0.00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <section class="amount-details">
+        <p>Amount Chargeable (in words)</p>
+        <p id="amount-in-words"></p>
+      </section>
+      <section class="footer">
+        <div class="footer-left">
+          <table>
+            <tr>
+              <td>
+                Company's PAN :
+              </td>
+              <td>
+                <p><strong>AAGFG3497F</strong></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="footer-right">
+          <table>
+            <tr>
+              <td>Bank Name:</td>
+              <td>
+                <p><strong>Axis Bank Ltd.</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td>A/c No:</td>
+              <td>
+                <p><strong>911030066250827</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td>Branch & IFS Code:</td>
+              <td>
+                <p><strong>YN Road & UTIB0000043</strong></p>
+              </td>
+            </tr>
+          </table>
+          <div class="for-div">
+            <p><strong>for G R AGRO INDUSTRIES 1</strong></p>
+            <p>Authorized Signatory</p>
+          </div>
+        </div>
+        <div class="declaration">
+          <p>This is a Computer Generated Document</p>
+        </div>
+      </section>
+    </div>
+
+  </div>
+  <button onclick="window.print()">Print Document</button>
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

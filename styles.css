@@ -1,0 +1,215 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.a4-document {
+  width: 21cm;
+  min-height: 29.7cm;
+  padding: 2cm;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#title-div {
+  text-align: center;
+}
+
+#title-div h2 {
+  margin: 0;
+  padding: 0;
+}
+
+#title-div p {
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+header p {
+  margin: 0;
+}
+
+.header-left {
+  width: 50%;
+  border-top: #000 1px solid;
+  border-left: #000 1px solid;
+  border-bottom: #000 1px solid;
+}
+
+.header-left .company-info {
+  padding: 5px;
+}
+
+.buyer-info {
+  margin: 60px 0;
+  width: 97.5%;
+  padding: 5px;
+  border-top: #000 1px solid;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header-right {
+  width: 50%;
+}
+
+.header-right table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.header-right td {
+  border: 1px solid #000;
+  padding: 5px;
+  vertical-align: top;
+  width: 30%;
+}
+
+#head-tfoot {
+  border: #000 1px solid;
+  border-top: none;
+}
+
+.term-delivery {
+  margin-bottom: 100px;
+}
+
+.buyer-info,
+.amount-details,
+.footer {
+  margin-bottom: 20px;
+}
+
+.item-details table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+.item-details th {
+  border: 1px solid #000;
+  text-align: left;
+  text-align: center;
+}
+
+.detailstr1 td {
+  padding-top: 15px;
+}
+
+#tfootstr td {
+  padding-top: 30px;
+  padding-bottom: 10vh;
+}
+
+.amount-details p {
+  margin: 0;
+}
+
+#amount-in-words {
+  justify-content: space-between;
+  width: 60%;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.item-details td {
+  border: 1px solid #000;
+  text-align: left;
+}
+
+.item-details tfoot tr:nth-child(1) {
+  height: 20vh;
+}
+
+.item-details tfoot tr:nth-child(2) {
+  font-weight: bold;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 85%;
+}
+
+.footer .footer-left {
+  margin: auto 0;
+}
+
+.footer .footer-right {
+  margin: auto 0;
+}
+
+.footer .footer-right p{
+  margin: 5px;
+}
+
+.footer-right .for-div {
+  text-align: right;
+  border: #000 1px solid;
+  border-bottom: none;
+  padding: 3px;
+}
+
+
+.footer-right .for-div p:nth-child(1) {
+  margin: 0 0 20px 0;
+}
+
+
+.footer-right .for-div p:nth-child(2) {
+  margin: 0px;
+}
+
+.declaration{
+  width: 200%;
+  padding: 5px 0 0 0; 
+  text-align: center;
+  border-top: #000 1px solid;
+}
+.declaration p{
+  padding: 0;
+  margin-top: 5px;
+  margin: auto;
+  text-align: center;
+}
+
+
+/* Print styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .a4-document,
+  .a4-document * {
+    visibility: visible;
+  }
+
+  .a4-document {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  button {
+    display: none;
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Input</title>
+</head>
+
+<body>
+  <label for="buyerName">Buyer Name:</label>
+  <input type="text" id="buyerName"><br><br>
+
+  <label for="buyerAddress">Buyer Address:</label>
+  <input type="text" id="buyerAddress"><br><br>
+
+  <label for="buyerGSTIN">Buyer GSTIN/UIN:</label>
+  <input type="text" id="buyerGSTIN"><br><br>
+
+  <label for="buyerState">Buyer State Name and Code:</label>
+  <input type="text" id="buyerState"><br><br>
+
+  <label for="buyerRef">Other References|  Prem Or Kailash</label>
+  <input type="text" id="buyerRef"><br><br>
+
+  <!-- Added input for PackingSales percentage -->
+
+  <hr>
+
+  <label for="sl">Sl No:</label>
+  <input type="text" id="sl"><br><br>
+
+  <label for="description">Description of Goods and Services:</label>
+  <input type="text" id="description"><br><br>
+
+  <label for="quantity">Quantity:</label>
+  <input type="text" id="quantity"><br><br>
+
+  <label for="rate">Rate:</label>
+  <input type="text" id="rate"><br><br>
+
+  <label for="per">Per: Pcs/Set</label>
+  <input type="text" id="per"><br><br>
+
+  <label for="disc">Disc. %:</label>
+  <input type="text" id="disc"><br><br>
+
+  <label for="packingSalesPercent">PackingSales Percent:</label>
+  <input type="text" id="packingSalesPercent"><br><br>
+
+  <button onclick="addItem()">Add Item</button>
+  <button onclick="saveInputs()">Save Inputs</button>
+
+  <script>
+    const items = [];
+
+    function addItem() {
+      // Get input values for item details
+      const sl = document.getElementById('sl').value;
+      const kind = document.getElementById('kind').value;
+      const description = document.getElementById('description').value;
+      const quantity = document.getElementById('quantity').value;
+      const rate = document.getElementById('rate').value;
+      const per = document.getElementById('per').value;
+      const disc = document.getElementById('disc').value;
+
+      // Add item to the items array
+      items.push({
+        sl,
+        kind,
+        description,
+        quantity,
+        rate,
+        per,
+        disc,
+      });
+
+      // Clear the input fields
+      document.getElementById('sl').value = '';
+      document.getElementById('kind').value = '';
+      document.getElementById('description').value = '';
+      document.getElementById('quantity').value = '';
+      document.getElementById('rate').value = '';
+      document.getElementById('per').value = '';
+      document.getElementById('disc').value = '';
+      document.getElementById('amount').value = '';
+    }
+
+    function saveInputs() {
+      // Get input values for buyer details
+      const buyerName = document.getElementById('buyerName').value;
+      const buyerAddress = document.getElementById('buyerAddress').value;
+      const buyerGSTIN = document.getElementById('buyerGSTIN').value;
+      const buyerState = document.getElementById('buyerState').value;
+      const buyerRef = document.getElementById('buyerRef').value;
+
+      // Get input value for PackingSales percentage
+      const packingSalesPercent = document.getElementById('packingSalesPercent').value;
+
+      // Save buyer inputs to localStorage
+      localStorage.setItem('buyerName', buyerName);
+      localStorage.setItem('buyerAddress', buyerAddress);
+      localStorage.setItem('buyerGSTIN', buyerGSTIN);
+      localStorage.setItem('buyerState', buyerState);
+      localStorage.setItem('buyerRef', buyerRef);
+
+      // Save PackingSales percentage to localStorage
+      localStorage.setItem('packingSalesPercent', packingSalesPercent);
+
+      // Convert items array to JSON and save to localStorage
+      localStorage.setItem('items', JSON.stringify(items));
+
+      // Redirect to the final output HTML file with query parameters
+      window.location.href =
+        `output.html?buyerName=${encodeURIComponent(buyerName)}&buyerAddress=${encodeURIComponent(buyerAddress)}&buyerGSTIN=${encodeURIComponent(buyerGSTIN)}&buyerState=${encodeURIComponent(buyerState)}&buyerRef=${encodeURIComponent(buyerRef)}&packingSalesPercent=${encodeURIComponent(packingSalesPercent)}&items=${encodeURIComponent(JSON.stringify(items))}`;
+    }
+  </script>
+</body>
+
+</html>
