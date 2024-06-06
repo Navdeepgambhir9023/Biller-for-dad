@@ -1,0 +1,43 @@
+body{
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #fbfbfb
+}
+
+label {
+  display: block;
+  font-size: larger;
+  color: #181818;
+}
+
+input{
+  width: 50%;
+  padding: 0.2em;
+  margin-top: 0.2em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#addBtn{
+  padding: 20px 30px;
+  margin: 10px;
+  background-color:rgb(81, 255, 0);
+  border-radius: 5px;
+  border: none;
+  color: #fbfbfb;
+  font-size: larger;
+  font-weight: bold;
+}
+
+#saveInputs{
+  padding: 20px 30px;
+  margin: 10px;
+  background-color: aqua;
+  border-radius: 5px;
+  border: none;
+    color: #fbfbfb;
+    font-size: larger;
+    font-weight: bold;
+}

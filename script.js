@@ -42,7 +42,7 @@ function updateOutputPage() {
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${item.sl}</td>
-      <td>${item.kind}</td>
+      <td></td>
       <td><strong>${item.description}</strong></td>
       <td><strong>${quantity}</strong></td>
       <td>${item.rate}</td>

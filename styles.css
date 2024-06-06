@@ -152,7 +152,7 @@ header p {
   margin: auto 0;
 }
 
-.footer .footer-right p{
+.footer .footer-right p {
   margin: 5px;
 }
 
@@ -173,17 +173,30 @@ header p {
   margin: 0px;
 }
 
-.declaration{
+.declaration {
   width: 200%;
-  padding: 5px 0 0 0; 
+  padding: 5px 0 0 0;
   text-align: center;
   border-top: #000 1px solid;
 }
-.declaration p{
+
+.declaration p {
   padding: 0;
   margin-top: 5px;
   margin: auto;
   text-align: center;
+}
+
+#print {
+  padding: 20px 30px;
+  margin: 10px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  border: none;
+  color: #fbfbfb;
+  font-size: larger;
+  font-weight: bold;
+
 }
 
 
